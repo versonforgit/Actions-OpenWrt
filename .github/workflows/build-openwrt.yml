@@ -85,7 +85,11 @@ jobs:
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
       if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
-      
+      # Send connection info to Telegram (optional)
+      # You can find related documents here: https://core.telegram.org/bots
+      env:
+        TELEGRAM_BOT_TOKEN: 5223378387:AAGL342O0_-y5k8wy7OTKMpSDGE9dd1MtMU
+        TELEGRAM_CHAT_ID: 1806584602
 
     - name: Download package
       id: package
