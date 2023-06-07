@@ -11,8 +11,8 @@
 name: Build OpenWrt
 
 on:
-  #schedule:
-  # - cron: 0 8 * * *
+  schedule:
+   - cron: 0 8 * * *
   repository_dispatch:
   workflow_dispatch:
     inputs:
@@ -22,7 +22,7 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/versonforgit/lede.git
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
